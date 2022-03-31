@@ -2,7 +2,9 @@ import { createWebHashHistory, createRouter } from "vue-router";
 import MainPage from "../components/MainPage";
 import MovieDetail from "../components/MovieDetail";
 import SeatPage from "../components/SeatPage";
-import UserIndo from "../components/UserIndo"
+import UserInfo from "../components/UserInfo"
+import OrderList from "../components/OrderList"
+import OrderDetail from "../components/OrderDetail"
 
 
 
@@ -18,15 +20,26 @@ const routes = [
         component: MovieDetail
     }, 
     {
-        path: "/seatpage",
+        path: "/seats",
         name: "SeatPage",
         component: SeatPage
-    }
-    , 
+    }, 
     {
         path: "/userinfo",
-        name: "UserIndo",
-        component: UserIndo
+        name: "UserInfo",
+        component: UserInfo
+    }, 
+    {
+        /// need to include a dynamic param id
+        path: "/userinfo/1/orders",
+        name: "OrderList",
+        component: OrderList
+    },
+    {
+        /// need to include a dynamic param id
+        path: "/userinfo/1/orders/1",
+        name: "OrderDetail",
+        component: OrderDetail
     }
 
 ];

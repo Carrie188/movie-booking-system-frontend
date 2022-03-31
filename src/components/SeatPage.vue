@@ -132,7 +132,7 @@ export default {
 }
 
 .seats {
-  background-color: #4FC3A1;
+  background-color: #7cd1b8;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -140,8 +140,9 @@ export default {
   justify-content: center;
   height: 100vh;
   font-family: "Lato", sans-serif;
-  margin: 10;
+  margin-top: 80px;
   box-sizing: border-box;
+  border-radius: 50px;
 }
 
 .movie-container {
@@ -240,7 +241,7 @@ p.text{
 }
 
 p.text span{
-    color: rgb(158, 248, 158);
+    color: green;
 }
 
 button {
