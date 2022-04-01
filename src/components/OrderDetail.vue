@@ -157,10 +157,7 @@ table{
   border-collapse: collapse;
   position: center;
 }
-td{
-  /* //padding: 5px 0 5px 15px;
-  //border: 1px solid #EEE */
-}
+
 .tabletitle{
   /* //padding: 5px; */
   font-size: .5em;
