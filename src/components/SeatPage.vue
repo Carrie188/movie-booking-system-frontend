@@ -77,11 +77,11 @@
                     <div class="seat sold"></div>
                     <div class="seat sold"></div>
                     <div class="seat sold"></div>
-                    <div class="seat"></div>
+                    <div class="seat" @click="select"></div>
                 </div>
                 </div>
             <p class="text">You have selected <span id="count">0</span> seat for a price of RS.<span id="total">0</span></p>
-            <button type="submit">Buy Tickets </button>
+            <router-link to="/orderdetail"><button type="submit">Buy Tickets</button></router-link> 
         </div>
 
     </div>
@@ -132,7 +132,7 @@ export default {
 }
 
 .seats {
-  background-color: #7cd1b8;
+  background-color: rgb(155, 150, 150);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -245,9 +245,14 @@ p.text span{
 }
 
 button {
+    text-decoration: none;
     margin-top: 20px;
     border-radius: 20px;
-    height: 50px;
-    width: 100px;
+    height: 40px;
+    width: 200px;
+    border-color: rgb(216, 213, 213);
+    background: #4FC3A1;
+  
+
 }
 </style>

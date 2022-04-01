@@ -1,8 +1,9 @@
 <template>
     <div>
+        <NavBar/>
         <MovieInfo/>
         <ShowList/>
-        <NavBar/>
+        
     </div>
 
 </template>

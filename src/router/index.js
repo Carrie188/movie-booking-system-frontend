@@ -31,13 +31,13 @@ const routes = [
     }, 
     {
         /// need to include a dynamic param id
-        path: "/userinfo/1/orders",
+        path: "/orders",
         name: "OrderList",
         component: OrderList
     },
     {
         /// need to include a dynamic param id
-        path: "/userinfo/1/orders/1",
+        path: "/orderdetail",
         name: "OrderDetail",
         component: OrderDetail
     }

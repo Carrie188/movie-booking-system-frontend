@@ -4,10 +4,11 @@
     <label for="active" class="close"></label>
     <div class="wrapper">
     <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/">Orders</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">SignIn</a></li>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/orders">Orders</router-link> </li>
+        <li><router-link to="/seats">SeatPage</router-link> </li>
+        <li><router-link to="/orderdetail">Invoice</router-link> </li>
+        <li><router-link to="/">SingIn</router-link> </li>
     </ul>
 </div>
 

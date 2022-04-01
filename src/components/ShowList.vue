@@ -18,9 +18,9 @@
             <td>{{show.startTime}}</td>
             <td>Yes</td>
             <td>
-                <form action="/seatpage">
-                <button type="submit" class="btn">Register</button>
-                </form>
+                <router-link to="/seats">
+                <button type="submit" class="btn-seats">Seats</button>
+                </router-link>
             </td>
         </tr>
         </tbody>
@@ -188,5 +188,14 @@ h2{
         display: block;
         text-align: center;
     }
+}
+
+
+.btn-seats{
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    border-color: #EEE;
+    background: #8edbc4;
 }
 </style>

@@ -18,9 +18,9 @@
                 <td>{{movie.durationMins}}</td>
                 <td>{{movie.releaseDate}}</td>
                 <td>
-                    <form action="/moviedetail">
-                    <button type="submit">Detail</button>
-                    </form>
+                    <router-link to="/moviedetail">
+                    <button type="submit" class="btn-detail">Detail</button>
+                    </router-link>
                 </td>
             </tr>
             </tbody>
@@ -187,5 +187,14 @@ h2{
         display: block;
         text-align: center;
     }
+}
+
+.btn-detail{
+
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    border-color: #EEE;
+    background: #8edbc4;
 }
 </style>

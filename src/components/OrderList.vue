@@ -24,11 +24,11 @@
                 <td>{{order.totalCost}}</td>
                 <td>
                     <div class="edit-button">
-                    <form action="orderdetail">
-                    <button type="submit">View Details</button>
-                    </form>
+                    <router-link to="/orderdetail">
+                    <button type="submit" class="view-detail">View Details</button>
+                    </router-link>
                     <form action="#">
-                    <button type="button">Cancle</button>
+                    <button type="button" class="cancle">Cancle</button>
                     </form>
                     </div>
                 </td>
@@ -108,7 +108,7 @@ h2{
     width: 100%;
     max-width: 100%;
     white-space: nowrap;
-    background-color: white;
+    background-color: rgb(224, 219, 219);
 }
 
 .fl-table td, .fl-table th {
@@ -202,8 +202,19 @@ h2{
     }
 }
 
+
 button{
-     display: flex;
+    /* display: flex; */
     margin: 10px;
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    border-color: #EEE;
+}
+.view-detail{
+    background: #4FC3A1;
+}
+.cancle{
+    background: #c5c9c8;
 }
 </style>
