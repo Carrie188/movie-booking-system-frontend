@@ -74,12 +74,9 @@
     
     </div><!--End InvoiceBot-->
         <div>
-            <router-link to="/">
-            <button type="button" class="log-out">Logout</button>
-            </router-link>
-            <router-link to="orders">
-            <button type="button" class="view-order">View Orders</button>
-            </router-link>
+            <button type="submit" class="log-out" @click="logout()">Logout</button>           
+            <button type="submit" class="view-order" @click="getOrderList()">View Orders</button>
+           
         </div>
   </div><!--End Invoice-->
 
@@ -91,6 +88,20 @@ export default {
     name: "OrderDetail",
     components: {
         NavBar
+    },data(){
+      return {
+
+      };
+    },methods:{
+      getOrderList(){
+        this.$router.push({name: "OrderList"});
+       
+      },
+      logout(){
+        this.$router.push({name: "MainPage"});
+      },
+    },mounted(){
+
     }
 
     

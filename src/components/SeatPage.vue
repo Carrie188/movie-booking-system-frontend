@@ -92,10 +92,12 @@
 <script>
 import NavBar from './NavBar.vue'
 
+
 export default {
     name: "SeatPage",
     components: {
-        NavBar
+        NavBar,
+
     },
     data(){
         return {
@@ -117,8 +119,9 @@ export default {
                     this.total = this.count * 30;
                     
                 }
-         },getOrderDetail(){
-
+         },
+         getOrderDetail(){
+            this.$router.push({name: "OrderDetail"});
          }
         
 

@@ -23,10 +23,8 @@
                 <td>{{order.numberOfTickets}}</td>
                 <td>{{order.totalCost}}</td>
                 <td>
-                    <div class="edit-button">
-                    <router-link to="/orderdetail">
-                    <button type="submit" class="view-detail">View Details</button>
-                    </router-link>
+                    <div class="edit-button"> 
+                    <button type="submit" class="view-detail" @click="getOrderDetail()">View Details</button>
                     <form action="#">
                     <button type="button" class="cancle">Cancle</button>
                     </form>
@@ -53,7 +51,10 @@ export default {
             orders: []
         };
 
-    },methods(){
+    },methods:{
+        getOrderDetail(){
+            this.$router.push({name: "OrderDetail"});
+        }
        
 
     },mounted(){
