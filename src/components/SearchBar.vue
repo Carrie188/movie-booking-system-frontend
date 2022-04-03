@@ -1,14 +1,14 @@
 <template>
     <div class="wrap">
         <div class="search">
-            <select v-model="selected" class="loaction">
+            <select class="loaction" v-model="location">
                 <option disabled value="">select location</option>
                 <option>New Westminster</option>
                 <option>Burnaby</option>
                 <option>North Vancouver</option>
             </select>
-            <input type="text" class="searchTerm" placeholder="What are you looking for?">
-            <button type="submit" class="searchButton">
+            <input type="text" class="searchTerm" placeholder="What are you looking for?" v-model="movieTitle">
+            <button type="submit" class="searchButton" @click="getMoviesByParams()">
                   &#128270;
             </button>
         </div>
@@ -17,7 +17,7 @@
 </template>
 <script>
 // import DatePick from './DatePicker.vue'
-
+import http from '../http-common.js'
 export default {
     name: "SearchBar",
     components:{
@@ -25,11 +25,26 @@ export default {
     },
     data(){
         return {
-            movies: []
+            movies: [],
+            movieTitle: "",
+            location: ""
         };
 
-    },methods(){
-       
+    },methods:{
+       getMoviesByParams(){
+         http.get("/movies",this.movieTitle).then((response) => {
+          this.movies = response.data;
+          localStorage.setItems("movies",this.movies);
+          // console.log(this.movies);
+          console.log(this.movieTitle);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+
+
+         localStorage.setItem
+       }
 
     },mounted(){
         

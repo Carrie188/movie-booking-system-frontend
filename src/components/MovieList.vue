@@ -44,17 +44,24 @@ export default {
     },methods:{
        getMovie(mId){
           localStorage.setItem("mId", mId);
+       },
+       getSearchMOvies(){
+            var movie = localStorage.getItem("movies");
+           if(movie!=null){
+               this.movies = localStorage.getItem("movies")
+           }else{
+               http.get("/movies")
+                .then((response)=>{
+                    this.movies = response.data;
+                    console.log(this.movies);
+                }).catch((e)=>{
+                    console.log(e.response.data);
+                })
+                }
        }
 
     },mounted(){
-        http
-        .get("/movies")
-        .then((response)=>{
-            this.movies = response.data;
-            console.log(this.movies);
-        }).catch((e)=>{
-            console.log(e.response.data);
-        })
+        this.getSearchMOvies()
         
     }
 

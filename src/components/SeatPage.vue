@@ -80,8 +80,8 @@
                     <div class="seat" @click="select"></div>
                 </div>
                 </div>
-            <p class="text">You have selected <span id="count">0</span> seat for a price of RS.<span id="total">0</span></p>
-            <router-link to="/orderdetail"><button type="submit">Buy Tickets</button></router-link> 
+            <p class="text">You have selected <span id="count">{{count}}</span> seat for a price of RS.<span id="total">{{total}}</span></p>
+           <button type="submit" @click="getOrderDetail()">Buy Tickets</button>
         </div>
 
     </div>
@@ -99,7 +99,10 @@ export default {
     },
     data(){
         return {
-            count: 0
+            selectedSeat: {},
+            selectedSeats: [],
+            count: 0,
+            total: 0
         };
     },
     methods:{
@@ -111,12 +114,13 @@ export default {
                     e.target.classList.toggle("selected");
                     // this.getElementById("count").innerText =  8888;
                     this.count +=1;
-                    // updateSelectedCount();
+                    this.total = this.count * 30;
+                    
                 }
-         },
-        // updateSelectedCount(){
-            
-        // }
+         },getOrderDetail(){
+
+         }
+        
 
     },
     mounted(){
