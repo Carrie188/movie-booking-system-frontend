@@ -19,7 +19,7 @@
                 <td>{{movie.releaseDate}}</td>
                 <td>
                     <router-link to="/moviedetail">
-                    <button type="submit" class="btn-detail">Detail</button>
+                    <button type="submit" class="btn-detail" @click="getMovie(movie.id)">Detail</button>
                     </router-link>
                 </td>
             </tr>
@@ -38,10 +38,13 @@ export default {
     data(){
         return {
             movies: []
+           
         };
 
-    },methods(){
-       
+    },methods:{
+       getMovie(mId){
+          localStorage.setItem("mId", mId);
+       }
 
     },mounted(){
         http

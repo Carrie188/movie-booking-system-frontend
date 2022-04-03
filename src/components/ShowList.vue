@@ -13,7 +13,7 @@
         <tbody v-for="show in shows" :key="show.id">
         <tr>
             <!-- <td>{{show.screen.name}}</td> -->
-            <td>Screen Name</td>
+            <td>Screen Name:{{show.screen.name}} </td>
             <td>{{show.date}}</td>
             <td>{{show.startTime}}</td>
             <td>Yes</td>
@@ -37,10 +37,11 @@ export default {
     },
     data(){
         return {
-            shows: []
+            shows: [],
+            screen: ""
         };
     },
-    methods(){
+    methods: {
         
     },
     mounted(){

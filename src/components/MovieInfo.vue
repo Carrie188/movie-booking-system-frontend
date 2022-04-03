@@ -6,7 +6,7 @@
         </div>
         <div class="movie__content">
             <div class="movie__title">
-            <h1 class="heading__primary">Movie Name: {{movie.title}} <i class="fas fa-fire"></i></h1>
+            <h1 class="heading__primary">{{movie.title}} <i class="fas fa-fire"></i></h1>
             <div class="movie__tag movie__tag--1">{{movie.category}}</div>
             <div class="movie__tag movie__tag--2">{{movie.category}}</div>
             </div>
@@ -39,21 +39,22 @@ export default {
             movie: {}
         };
     },
-    methods(){
-        
-    },
-    mounted(){
-         http
-        .get("/movies/7")
-        .then((response) => {
+    methods:{
+        setMovieInfo(){
+           var id = localStorage.getItem("mId");
+           http.get(`/movies/${id}`)
+           .then((response) => {
                 this.movie = response.data;
                 console.log(this.movie);
+            }).catch(
+                (e) => {
+                    console.log(e.response.data);
+                }
+            );
             }
-        ).catch(
-            (e) => {
-                console.log(e.response.data);
-            }
-        );
+    },
+    mounted(){
+         this.setMovieInfo()
     }
 
     
