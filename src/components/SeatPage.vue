@@ -18,70 +18,70 @@
             </ul>
             <div class="container">
                 <div class="screen"></div>
-                <div class="row">
-                    <div class="seat" @click="select"></div>
-                    <div class="seat"  @click="select"></div>
-                    <div class="seat"  @click="select"></div>
-                    <div class="seat"  @click="select"></div>
-                    <div class="seat"  @click="select"></div>
-                    <div class="seat"  @click="select"></div>
-                    <div class="seat"  @click="select"></div>
-                    <div class="seat" @click="select"></div>
+                <div class="row" >
+                    <div class="seat" @click="select" data-value="00"></div>
+                    <div class="seat"  @click="select" data-value="01"></div>
+                    <div class="seat"  @click="select" data-value="02"></div>
+                    <div class="seat"  @click="select" data-value="03"></div>
+                    <div class="seat"  @click="select" data-value="04"></div>
+                    <div class="seat"  @click="select" data-value="05"></div>
+                    <div class="seat"  @click="select" data-value="06"></div>
+                    <div class="seat" @click="select" data-value="07"></div>
                 </div>
 
                 <div class="row">
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat sold"></div>
-                    <div class="seat sold"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
+                    <div class="seat" @click="select" data-value="10"></div>
+                    <div class="seat" @click="select" data-value="11"></div>
+                    <div class="seat" @click="select" data-value="12"></div>
+                    <div class="seat sold" data-value="13"></div>
+                    <div class="seat sold" data-value="14"></div>
+                    <div class="seat" @click="select" data-value="15"></div>
+                    <div class="seat" @click="select" data-value="16"></div>
+                    <div class="seat" @click="select" data-value="17"></div>
                 </div>
                 <div class="row">
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat sold"></div>
-                    <div class="seat sold"></div>
+                    <div class="seat" @click="select" data-value="20"></div>
+                    <div class="seat" @click="select" data-value="21"></div>
+                    <div class="seat" @click="select" data-value="22"></div>
+                    <div class="seat" @click="select" data-value="23"></div>
+                    <div class="seat" @click="select" data-value="24"></div>
+                    <div class="seat" @click="select" data-value="25"></div>
+                    <div class="seat sold" @click="select"  data-value="26"></div>
+                    <div class="seat sold" @click="select"  data-value="27"></div>
                 </div>
                 <div class="row">
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
+                    <div class="seat" @click="select" data-value="30"></div>
+                    <div class="seat" @click="select"  data-value="31"></div>
+                    <div class="seat" @click="select"  data-value="32"></div>
+                    <div class="seat" @click="select"  data-value="33"></div>
+                    <div class="seat" @click="select"  data-value="34"></div>
+                    <div class="seat" @click="select"  data-value="35"></div>
+                    <div class="seat" @click="select" data-value="36"></div>
+                    <div class="seat" @click="select" data-value="37"></div>
                 </div>
                 <div class="row">
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat sold"></div>
-                    <div class="seat sold"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
+                    <div class="seat" @click="select"  data-value="40"></div>
+                    <div class="seat" @click="select" data-value="41"></div>
+                    <div class="seat" @click="select" data-value="42"></div>
+                    <div class="seat sold" data-value="43"></div>
+                    <div class="seat sold" data-value="44"></div>
+                    <div class="seat" @click="select" data-value="45"></div>
+                    <div class="seat" @click="select" data-value="46"></div>
+                    <div class="seat" @click="select" data-value="47"></div>
                 </div>
                 <div class="row">
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat" @click="select"></div>
-                    <div class="seat sold"></div>
-                    <div class="seat sold"></div>
-                    <div class="seat sold"></div>
-                    <div class="seat" @click="select"></div>
+                    <div class="seat" @click="select" data-value="50"></div>
+                    <div class="seat" @click="select" data-value="51"></div>
+                    <div class="seat" @click="select" data-value="52"></div>
+                    <div class="seat" @click="select" data-value="53"></div>
+                    <div class="seat sold" data-value="54"></div>
+                    <div class="seat sold" data-value="55"></div>
+                    <div class="seat sold" data-value="56"></div>
+                    <div class="seat" @click="select" data-value="57"></div>
                 </div>
                 </div>
             <p class="text">You have selected <span id="count">{{count}}</span> seat for a price of RS.<span id="total">{{total}}</span></p>
-           <button type="submit" @click="getOrderDetail()">Buy Tickets</button>
+           <button type="submit" @click="addNewOrder()">Buy Tickets</button>
         </div>
 
     </div>
@@ -91,7 +91,7 @@
 
 <script>
 import NavBar from './NavBar.vue'
-
+import http from "../http-common";
 
 export default {
     name: "SeatPage",
@@ -101,10 +101,17 @@ export default {
     },
     data(){
         return {
-            selectedSeat: {},
+            selectedMovie:{},
+            selectedShow:{},
+            selectedSeat: {seatNumber:"", isAvailable:""},
             selectedSeats: [],
+            selectedScreen:{},
             count: 0,
-            total: 0
+            total: 0,
+            user:{},
+            price:6.0,
+            newReservation:{user:{},tickets:[]},
+            tickets:[]
         };
     },
     methods:{
@@ -115,13 +122,56 @@ export default {
                 ) {
                     e.target.classList.toggle("selected");
                     // this.getElementById("count").innerText =  8888;
+                    var seatNum = e.target.getAttribute("data-value")
+                    console.log("selectedSeat: "+seatNum)
+                    this.selectedSeat = {seatNumber: seatNum, isAvailable: "false"}
+                    console.log("selectedSeat: "+ JSON.stringify(this.selectedSeat))
+                    this.selectedSeats.push(this.selectedSeat)
+                    console.log(this.selectedSeats.length)
                     this.count +=1;
                     this.total = this.count * 30;
                     
                 }
          },
-         getOrderDetail(){
-            this.$router.push({name: "OrderDetail"});
+         addNewOrder(){
+            
+              this.selectedScreen = JSON.parse(sessionStorage.getItem("selectedScreen"))
+              //1. creste seats
+              this.selectedSeats.forEach(
+                (s)=>{
+                  http.post("/seats", s)
+                  .then((response)=>{
+                    console.log("add seat:" + response.data)
+                  }).catch((e)=>{
+                    console.log("add seat error:" + e.response.data)
+                  })
+                }
+              )
+
+              //2. create tickes
+              
+          
+
+
+
+
+
+
+              //3. add new reservation
+                // http.post("/reservations",this.newReservation)
+                // .then((response)=>{
+                //   sessionStorage.setItem("newOrderId",JSON.stringify(response.data.reservationId));
+                //   // alert("welcome to meta beta!")
+                //   this.$router.push({name: "OrderDetail"});
+                // }).catch((err)=>{
+                //   console.log(err.response.data)
+                // });
+
+             
+            
+
+
+           
          }
         
 

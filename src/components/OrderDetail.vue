@@ -74,7 +74,7 @@
     
     </div><!--End InvoiceBot-->
         <div>
-            <button type="submit" class="log-out" @click="logout()">Logout</button>           
+            <!-- <button type="submit" class="log-out" @click="logout()">Logout</button>            -->
             <button type="submit" class="view-order" @click="getOrderList()">View Orders</button>
            
         </div>
@@ -96,10 +96,10 @@ export default {
       getOrderList(){
         this.$router.push({name: "OrderList"});
        
-      },
-      logout(){
-        this.$router.push({name: "MainPage"});
-      },
+      }
+      // logout(){
+      //   this.$router.push({name: "MainPage"});
+      // },
     },mounted(){
 
     }

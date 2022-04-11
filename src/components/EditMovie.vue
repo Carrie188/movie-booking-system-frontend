@@ -1,6 +1,11 @@
-<template>
+ <template>
 
+    <h1> Admin Edit movie list</h1>
+   <NavBar/>
     <div class="table-wrapper">
+      <router-link to="/addMovie">  <!--not right-->
+            <button type="button" class="btn-detail">Add Movie</button>
+    </router-link>
         <table class="fl-table">
             <thead>
             <tr>
@@ -8,7 +13,8 @@
                 <th>Category</th>
                 <th>Duration</th>
                 <th>Release Date</th>
-                <th>Details</th>
+                <th>show time</th>
+                <th>Edit</th>
             </tr>
             </thead>
             <tbody  v-for="movie in movies" :key="movie.id">
@@ -17,62 +23,71 @@
                 <td>{{movie.category}}</td>
                 <td>{{movie.durationMins}}</td>
                 <td>{{movie.releaseDate}}</td>
+                <td><ol>
+                    <li class="showList" v-for="eachShow in movie.shows" :key="eachShow.message">Date:{{eachShow.date}},{{eachShow.startTime}}-{{eachShow.endTime}}</li>
+                    </ol></td>
                 <td>
-                    <router-link to="/moviedetail">
-                    <button type="submit" class="btn-detail" @click="getMovie(movie.id)">Detail</button>
-                    </router-link>
+                    <button type="button" class="btn-detail" @click="DeleteMovie(movie.id)">Delete</button>
+                    <button class="btn-detail" @click="AddShow(movie.id)">Add show</button>
                 </td>
             </tr>
             </tbody>
         </table>
+        <!-- <ol>
+        <li v-for="show in shows" :key="show.message">{{show.screen}}</li>
+        </ol> -->
+
 
     </div>
 </template>
 <script>
+import NavBar from './NavBar.vue';
 import http from '../http-common.js'
+import router from "../router/index"
 export default {
      name: "MovieList",
     components:{
-        // DatePick
+       NavBar
     },
     data(){
         return {
-            movies: []
-           
+            movies: [],
+            shows:[]
         };
 
     },methods:{
-       getMovie(mId){
-
-           http.get(`/movies/${mId}`)
-           .then((response)=>{
-               sessionStorage.setItem("selectedMovie",JSON.stringify(response.data))
-               console.log("selectedMovie"+JSON.stringify(response.data))
-           })
-           .catch((e)=>{
-               console.log(e.response.data);
-           })
+       // user id to delete movie in movie table 
+      DeleteMovie(id) {
+        http.delete("/movies/"+id)
+        .catch(e=>console.log(e.response.data));
+      
+      alert("Delete Success");
+        router.go(0);
+      },
 
 
-          sessionStorage.setItem("selectedMovieId", mId);
-       },
-       getSearchMOvies(){
-           
-           if(sessionStorage.getItem("movies")!=null){
-               this.movies = sessionStorage.getItem("movies")
-           }else{
-               http.get("/movies")
-                .then((response)=>{
-                    this.movies = response.data;
-                    console.log(this.movies);
-                }).catch((e)=>{
-                    console.log(e.response.data);
-                })
-                }
-       }
+      // user click Add show button 
+      AddShow(id){
+        localStorage.setItem("thisMovie",id);
+        router.push("/addShow");
+      }
 
+      
     },mounted(){
-        this.getSearchMOvies()
+        http
+        .get("/movies")
+        .then((response)=>{
+            this.movies = response.data;
+            // console.log(this.movies);
+        }).catch((e)=>{
+            console.log(e.response.data);
+        })
+
+        // http
+        // .get("/shows")
+        // .then((response)=>{
+        //     this.shows= response.data;
+        // })
         
     }
 
@@ -218,4 +233,10 @@ h2{
     border-color: #EEE;
     background: #8edbc4;
 }
+
+/*new*/
+.showList{
+    list-style: none;
+}
+
 </style>

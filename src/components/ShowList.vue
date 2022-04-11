@@ -17,9 +17,9 @@
             <td>{{show.startTime}}</td>
             <td>Yes</td>
             <td>
-                <router-link to="/seats">
-                <button type="submit" class="btn-seats">Seats</button>
-                </router-link>
+                <!-- <router-link to="/seats"> -->
+                <button type="submit" class="btn-seats" @click="getSeat(show.id)">Seats</button>
+                <!-- </router-link> -->
             </td>
         </tr>
         </tbody>
@@ -29,6 +29,7 @@
 
 <script>
 import http from "../http-common.js";
+
 export default {
     name: "ShowList",
     components: {
@@ -37,24 +38,61 @@ export default {
     data(){
         return {
             shows: [],
-            screen: ""
+            selectedShow: "",
+            selectedScreen:"",
+            movie:null,
+            userId:null
         };
     },
     methods: {
-        
+        getSeat(sId){
+            this.userId =sessionStorage.getItem("LoginUserId");
+            
+            console.log("show Id:"+sId);
+            if(this.userId==null){  
+              alert("you should login first!")    
+              this.$router.push({name: "Login"});
+            }else{
+                //get the screen of the selected show
+                http.get(`/shows/${sId}`)
+                .then((response)=>{
+                    this.selectedShow = response.data;
+                    console.log("selectedShow data"+JSON.stringify(this.selectedShow))
+                    this.selectedScreen = response.data.screen;
+                    console.log("selectedScreen data"+JSON.stringify(this.selectedScreen))
+                    // set data into session storage
+                    sessionStorage.setItem("selectedShowId",JSON.stringify(this.selectedShow));
+                    sessionStorage.setItem("selectedScreen",JSON.stringify(this.selectedScreen));
+                    
+                })
+                .catch((e)=>{
+                    console.log(e.response.data);
+                })
+                
+                this.$router.push({name: "SeatPage"});
+            }
+        }
     },
     mounted(){
-         http
-        .get("/shows")
-        .then((response) => {
-                this.shows = response.data;
-                console.log(this.shows);
-            }
-        ).catch(
-            (e) => {
-                console.log(e.response.data);
-            }
-        );
+        var id = sessionStorage.getItem("selectedMovieId")
+           http.get(`/movies/${id}`)
+           .then((response) => {
+                this.movie = response.data;
+                this.shows = response.data.shows;
+                
+                console.log(this.movie.shows);
+            }).catch(
+                (e) => {
+                    console.log(e.response.data);
+                }
+            );
+
+
+
+
+
+
+            
     }
 
     

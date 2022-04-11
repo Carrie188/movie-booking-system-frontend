@@ -41,11 +41,11 @@ export default {
     },
     methods:{
         setMovieInfo(){
-           var id = localStorage.getItem("mId");
+           var id = sessionStorage.getItem("selectedMovieId")
            http.get(`/movies/${id}`)
            .then((response) => {
                 this.movie = response.data;
-                console.log(this.movie);
+                console.log("movie info:"+this.movie);
             }).catch(
                 (e) => {
                     console.log(e.response.data);

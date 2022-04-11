@@ -8,7 +8,7 @@
         <li><router-link to="/orders">Orders</router-link> </li>
         <li><router-link to="/seats">SeatPage</router-link> </li>
         <li><router-link to="/orderdetail">Invoice</router-link> </li>
-        <li><router-link to="/">SingIn</router-link> </li>
+        <li><router-link to="/login" @click="ChangeStates" id="loginStates">SignIn</router-link> </li>
     </ul>
 </div>
 
@@ -20,9 +20,27 @@ export default {
     name: "NavBar",
     components: {
         
+    },
+    methods:{
+      ChangeStates(){
+         var loginStates= document.getElementById("loginStates");
+         if (loginStates.innerHTML=="Sigout"){
+           sessionStorage.clear();
+           localStorage.clear();
+         }
+      }
+    },
+    mounted(){
+      var loginStates= document.getElementById("loginStates");
+      // console.log("loginStates: "+loginStates.innerHTML);
+      // console.log("SessionState: "+sessionStorage.getItem("LoginUserID"));
+      if (JSON.parse(sessionStorage.getItem("LoginUserId"))!=null){
+        loginStates.innerHTML="Sigout";
+      } else {
+        loginStates.innerHTML="SignIn"
+      }
+      // console.log("loginStates: "+loginStates.innerHTML);
     }
-
-    
 }
 </script>
 <style scoped>
