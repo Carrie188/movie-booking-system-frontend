@@ -15,7 +15,7 @@
     <div id="mid">
       <div class="info">
         <h2>Contact Info</h2>
-        <p> Customer name: Carrie<br>Phone Number: 7786826932<br>Email : carriechen188@gmai.com<br></p>
+        <p> Customer name: {{user.userName}}<br>Phone Number: {{user.userPhoneNumber}}<br>Email : {{user.userEmail}}<br></p>
       </div>
     </div><!--End Invoice Mid-->
     
@@ -23,46 +23,24 @@
 
         <div id="table">
             <table>
+              <thead>
                 <tr class="tabletitle">
-                    <td class="item"><h2>Ticket ID</h2></td>
+                    <td class="item"><h2>Order ID</h2></td>
                     <td class="Hours"><h2>Seat ID</h2></td>
                     <td class="Rate"><h2>Sub Total</h2></td>
                 </tr>
-
-                <tr class="service">
-                    <td class="tableitem"><p class="itemtext">Ticket 1</p></td>
-                    <td class="tableitem"><p class="itemtext">0101</p></td>
-                    <td class="tableitem"><p class="itemtext">$35.00</p></td>
+              </thead>
+               <tbody v-for="ticket in tickets" :key="ticket.id">
+                <tr class="service" >
+                    <td class="tableitem"><p class="itemtext">{{newOrderId}}</p></td>
+                    <td class="tableitem"><p class="itemtext">{{ticket.seatNumber}}</p></td>
+                    <td class="tableitem"><p class="itemtext">${{ticket.price}}</p></td>
                 </tr>
-
-                <tr class="service">
-                    <td class="tableitem"><p class="itemtext">Ticket 2</p></td>
-                    <td class="tableitem"><p class="itemtext">0103</p></td>
-                    <td class="tableitem"><p class="itemtext">$25.00</p></td>
-                </tr>
-
-                <tr class="service">
-                    <td class="tableitem"><p class="itemtext">Ticket 3</p></td>
-                    <td class="tableitem"><p class="itemtext">0105</p></td>
-                    <td class="tableitem"><p class="itemtext">$35.00</p></td>
-                </tr>
-                <tr class="service">
-                    <td class="tableitem"><p class="itemtext">Ticket 4</p></td>
-                    <td class="tableitem"><p class="itemtext">0110</p></td>
-                    <td class="tableitem"><p class="itemtext">$50.00</p></td>
-                </tr>
-
-
-                <tr class="tabletitle">
-                    <td></td>
-                    <td class="Rate"><h2>tax</h2></td>
-                    <td class="payment"><h2>$19.25</h2></td>
-                </tr>
-
-                <tr class="tabletitle">
+               </tbody>
+               <tr class="tabletitle">
                     <td></td>
                     <td class="Rate"><h2>Total</h2></td>
-                    <td class="payment"><h2>$644.25</h2></td>
+                    <td class="payment"><h2>${{totalCost}}</h2></td>
                 </tr>
             </table>
         </div><!--End Table-->
@@ -84,23 +62,40 @@
 
 <script>
 import NavBar from './NavBar.vue'
+import http from "../http-common";
 export default {
     name: "OrderDetail",
     components: {
         NavBar
     },data(){
       return {
-
+          newOrderId:"",
+          user:{},
+          tickets:[],
+          totalCost:0.0,
+          tNum: 0
       };
     },methods:{
       getOrderList(){
         this.$router.push({name: "OrderList"});
        
       }
-      // logout(){
-      //   this.$router.push({name: "MainPage"});
-      // },
+      
     },mounted(){
+        var oId = sessionStorage.getItem("newOrderId")
+        this.newOrderId = oId;
+        this.user = JSON.parse(sessionStorage.getItem("user"));
+        console.log("new order id: "+oId)
+         http.get(`/reservations/${oId}`).then((response)=>{
+                    this.tickets = response.data.tickets;
+                    this.totalCost = response.data.totalCost;
+                    this.tNum = response.data.numberOfTickets;
+                    console.log("get all tickets: "+JSON.stringify(this.tickets))
+                  }).catch((e)=>{
+                    console.log("get tickets failed");
+                    console.log(e.response.data);
+                  })
+
 
     }
 

@@ -31,19 +31,29 @@ export default {
         };
 
     },methods:{
-       getMoviesByParams(){
-         http.get("/movies",this.movieTitle).then((response) => {
-          this.movies = response.data;
-          localStorage.setItems("movies",this.movies);
-          // console.log(this.movies);
-          console.log(this.movieTitle);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-
-
-         localStorage.setItem
+       
+        getMoviesByParams(){
+         console.log("title: "+ this.movieTitle)
+         if(this.movieTitle !== ""){
+            http.get(`/movies?title=${this.movieTitle}`).then((response) => {
+            this.movies = response.data;
+            sessionStorage.setItem("movies",JSON.stringify(this.movies))
+            console.log("movies: " + JSON.stringify(this.movies));
+            
+          })
+          .catch((e) => {
+            console.log(e.response.data);
+          });
+         }else{
+           http.get("/movies")
+                            .then((response)=>{
+                                this.movies = response.data;
+                                console.log(this.movies);
+                            }).catch((e)=>{
+                                console.log(e.response.data);
+                            })
+         }
+         
        }
 
     },mounted(){

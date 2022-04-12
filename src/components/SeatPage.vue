@@ -19,65 +19,65 @@
             <div class="container">
                 <div class="screen"></div>
                 <div class="row" >
-                    <div class="seat" @click="select" data-value="00"></div>
-                    <div class="seat"  @click="select" data-value="01"></div>
-                    <div class="seat"  @click="select" data-value="02"></div>
-                    <div class="seat"  @click="select" data-value="03"></div>
-                    <div class="seat"  @click="select" data-value="04"></div>
-                    <div class="seat"  @click="select" data-value="05"></div>
-                    <div class="seat"  @click="select" data-value="06"></div>
-                    <div class="seat" @click="select" data-value="07"></div>
+                    <div class="seat" @click="select" data-value="A00"></div>
+                    <div class="seat"  @click="select" data-value="A01"></div>
+                    <div class="seat"  @click="select" data-value="A02"></div>
+                    <div class="seat"  @click="select" data-value="A03"></div>
+                    <div class="seat"  @click="select" data-value="A04"></div>
+                    <div class="seat"  @click="select" data-value="A05"></div>
+                    <div class="seat"  @click="select" data-value="A06"></div>
+                    <div class="seat" @click="select" data-value="A07"></div>
                 </div>
 
                 <div class="row">
-                    <div class="seat" @click="select" data-value="10"></div>
-                    <div class="seat" @click="select" data-value="11"></div>
-                    <div class="seat" @click="select" data-value="12"></div>
-                    <div class="seat sold" data-value="13"></div>
-                    <div class="seat sold" data-value="14"></div>
-                    <div class="seat" @click="select" data-value="15"></div>
-                    <div class="seat" @click="select" data-value="16"></div>
-                    <div class="seat" @click="select" data-value="17"></div>
+                    <div class="seat" @click="select" data-value="B10"></div>
+                    <div class="seat" @click="select" data-value="B11"></div>
+                    <div class="seat" @click="select" data-value="B12"></div>
+                    <div class="seat sold" data-value="B13"></div>
+                    <div class="seat sold" data-value="B14"></div>
+                    <div class="seat" @click="select" data-value="B15"></div>
+                    <div class="seat" @click="select" data-value="B16"></div>
+                    <div class="seat" @click="select" data-value="B17"></div>
                 </div>
                 <div class="row">
-                    <div class="seat" @click="select" data-value="20"></div>
-                    <div class="seat" @click="select" data-value="21"></div>
-                    <div class="seat" @click="select" data-value="22"></div>
-                    <div class="seat" @click="select" data-value="23"></div>
-                    <div class="seat" @click="select" data-value="24"></div>
-                    <div class="seat" @click="select" data-value="25"></div>
-                    <div class="seat sold" @click="select"  data-value="26"></div>
-                    <div class="seat sold" @click="select"  data-value="27"></div>
+                    <div class="seat" @click="select" data-value="C20"></div>
+                    <div class="seat" @click="select" data-value="C21"></div>
+                    <div class="seat" @click="select" data-value="C22"></div>
+                    <div class="seat" @click="select" data-value="C23"></div>
+                    <div class="seat" @click="select" data-value="C24"></div>
+                    <div class="seat" @click="select" data-value="C25"></div>
+                    <div class="seat sold" @click="select"  data-value="C26"></div>
+                    <div class="seat sold" @click="select"  data-value="C27"></div>
                 </div>
                 <div class="row">
-                    <div class="seat" @click="select" data-value="30"></div>
-                    <div class="seat" @click="select"  data-value="31"></div>
-                    <div class="seat" @click="select"  data-value="32"></div>
-                    <div class="seat" @click="select"  data-value="33"></div>
-                    <div class="seat" @click="select"  data-value="34"></div>
-                    <div class="seat" @click="select"  data-value="35"></div>
-                    <div class="seat" @click="select" data-value="36"></div>
-                    <div class="seat" @click="select" data-value="37"></div>
+                    <div class="seat" @click="select" data-value="D30"></div>
+                    <div class="seat" @click="select"  data-value="D31"></div>
+                    <div class="seat" @click="select"  data-value="D32"></div>
+                    <div class="seat" @click="select"  data-value="D33"></div>
+                    <div class="seat" @click="select"  data-value="D34"></div>
+                    <div class="seat" @click="select"  data-value="D35"></div>
+                    <div class="seat" @click="select" data-value="D36"></div>
+                    <div class="seat" @click="select" data-value="D37"></div>
                 </div>
                 <div class="row">
-                    <div class="seat" @click="select"  data-value="40"></div>
-                    <div class="seat" @click="select" data-value="41"></div>
-                    <div class="seat" @click="select" data-value="42"></div>
-                    <div class="seat sold" data-value="43"></div>
-                    <div class="seat sold" data-value="44"></div>
-                    <div class="seat" @click="select" data-value="45"></div>
-                    <div class="seat" @click="select" data-value="46"></div>
-                    <div class="seat" @click="select" data-value="47"></div>
+                    <div class="seat" @click="select"  data-value="E40"></div>
+                    <div class="seat" @click="select" data-value="E41"></div>
+                    <div class="seat" @click="select" data-value="E42"></div>
+                    <div class="seat sold" data-value="E43"></div>
+                    <div class="seat sold" data-value="E44"></div>
+                    <div class="seat" @click="select" data-value="E45"></div>
+                    <div class="seat" @click="select" data-value="E46"></div>
+                    <div class="seat" @click="select" data-value="E47"></div>
                 </div>
                 <div class="row">
-                    <div class="seat" @click="select" data-value="50"></div>
-                    <div class="seat" @click="select" data-value="51"></div>
-                    <div class="seat" @click="select" data-value="52"></div>
-                    <div class="seat" @click="select" data-value="53"></div>
-                    <div class="seat sold" data-value="54"></div>
-                    <div class="seat sold" data-value="55"></div>
-                    <div class="seat sold" data-value="56"></div>
-                    <div class="seat" @click="select" data-value="57"></div>
+                    <div class="seat" @click="select" data-value="F50"></div>
+                    <div class="seat" @click="select" data-value="F51"></div>
+                    <div class="seat" @click="select" data-value="F52"></div>
+                    <div class="seat" @click="select" data-value="F53"></div>
+                    <div class="seat sold" data-value="F54"></div>
+                    <div class="seat sold" data-value="F55"></div>
+                    <div class="seat sold" data-value="F56"></div>
+                    <div class="seat" @click="select" data-value="F57"></div>
                 </div>
                 </div>
             <p class="text">You have selected <span id="count">{{count}}</span> seat for a price of RS.<span id="total">{{total}}</span></p>
@@ -107,11 +107,12 @@ export default {
             selectedSeats: [],
             selectedScreen:{},
             count: 0,
-            total: 0,
+            total: 0.0,
             user:{},
             price:6.0,
-            newReservation:{user:{},tickets:[]},
+            newReservation:{},
             tickets:[]
+
         };
     },
     methods:{
@@ -124,60 +125,113 @@ export default {
                     // this.getElementById("count").innerText =  8888;
                     var seatNum = e.target.getAttribute("data-value")
                     console.log("selectedSeat: "+seatNum)
-                    this.selectedSeat = {seatNumber: seatNum, isAvailable: "false"}
+                    this.selectedSeat = {seatNumber: seatNum, isAvailable: false}
                     console.log("selectedSeat: "+ JSON.stringify(this.selectedSeat))
                     this.selectedSeats.push(this.selectedSeat)
-                    console.log(this.selectedSeats.length)
+                    console.log(JSON.stringify(this.selectedSeats))
                     this.count +=1;
-                    this.total = this.count * 30;
+                    this.total = this.count * 6.5;
                     
                 }
          },
          addNewOrder(){
-            
-              this.selectedScreen = JSON.parse(sessionStorage.getItem("selectedScreen"))
-              //1. creste seats
-              this.selectedSeats.forEach(
-                (s)=>{
-                  http.post("/seats", s)
-                  .then((response)=>{
-                    console.log("add seat:" + response.data)
-                  }).catch((e)=>{
-                    console.log("add seat error:" + e.response.data)
-                  })
-                }
-              )
+              // 1. create seats
+              this.selectedSeats.forEach((s)=>{
+                http.post("/seats",s).then((response)=>{
+                    console.log("add seat: "+ JSON.stringify(response.data));
+                }).catch((err)=>{
+                  console.log(err.response.data)
+                })
+              })
 
               //2. create tickes
-              
-          
+              this.selectedSeats.forEach(
+                (s)=>{
+                  var seatNum = s.seatNumber;
+                  
+                  var newTicket = {price: 6.5, seatNumber: seatNum};
+                  console.log("newTicket:"+JSON.stringify(newTicket))
+                  this.tickets.push(newTicket);
+                  http.post("/tickets",newTicket)
+                  .then((response)=>{
+                    console.log("add ticket:" + JSON.stringify(response.data))
+                  }).catch((e)=>{
+                    console.log("add tickets error:" + e.response.data)
+                  })
 
+                }
+              )
+              sessionStorage.setItem("tickets", this.tickets);
+                
+               //3. add new reservation
+               
 
-
-
-
-
-              //3. add new reservation
-                // http.post("/reservations",this.newReservation)
-                // .then((response)=>{
-                //   sessionStorage.setItem("newOrderId",JSON.stringify(response.data.reservationId));
-                //   // alert("welcome to meta beta!")
-                //   this.$router.push({name: "OrderDetail"});
-                // }).catch((err)=>{
-                //   console.log(err.response.data)
-                // });
+               
+                // console.log("new reservstion:" + JSON.stringify(this.newReservation));
+                http.post("/reservations",this.newReservation)
+                .then((response)=>{
+                  sessionStorage.setItem("curentOrder",response.data);
+                  this.newOrderId = response.data.reservationId;
+                  sessionStorage.setItem("newOrderId",this.newOrderId);
+                  this.setUserandTicket();
+                  // console.log("new reservstion:" + JSON.stringify(this.newReservation));
+                  // console.log("the new order: " + this.newOrderId)
+                  this.$router.push({name: "OrderDetail"});
+                }).catch((e)=>{
+                  console.log(e.response.data)
+                })
+             
+                
 
              
             
 
 
            
+         },
+         setUserandTicket(){
+           var oId = sessionStorage.getItem("newOrderId")
+           console.log("the new order: " + oId)
+
+           //can not get the orderId?????
+           // 4. set user to the order
+
+
+
+            http.put(`/reservations/${oId}/setuser`, this.user).then((response)=>{
+                    console.log("set user for the new order: " + JSON.stringify(response.data))
+                  }).catch((e)=>{
+                    console.log("failed adding order");
+                    console.log(e.response.data);
+                  })
+
+
+          // 4. set user to the order
+            this.tickets.forEach((t)=>{
+                http.put(`/reservations/${oId}/setticket`, t).then((response)=>{
+                                    console.log("set tickets for the new order: " + JSON.stringify(response.data))
+                                  }).catch((e)=>{
+                                    console.log("failed adding order");
+                                    console.log(e.response.data);
+                                  })
+            })
+            
          }
         
 
     },
     mounted(){
-
+        var id = sessionStorage.getItem("LoginUserId");
+           http.get(`/users/${id}`)
+           .then((response) => {
+                this.user =response.data;
+                sessionStorage.setItem("user",JSON.stringify(this.user))
+                console.log(JSON.stringify(this.user));
+            }).catch(
+                (e) => {
+                    console.log(e.response.data);
+                }
+            );
     }
 
     

@@ -37,7 +37,7 @@ export default {
     },
     data(){
         return {
-            movies: []
+            movies: null
            
         };
 
@@ -55,24 +55,23 @@ export default {
 
 
           sessionStorage.setItem("selectedMovieId", mId);
-       },
-       getSearchMOvies(){
-           
-           if(sessionStorage.getItem("movies")!=null){
-               this.movies = sessionStorage.getItem("movies")
-           }else{
-               http.get("/movies")
-                .then((response)=>{
-                    this.movies = response.data;
-                    console.log(this.movies);
-                }).catch((e)=>{
-                    console.log(e.response.data);
-                })
-                }
        }
 
     },mounted(){
-        this.getSearchMOvies()
+        if(JSON.parse(sessionStorage.getItem("movies")).length <= 0){
+            console.log(sessionStorage.getItem("movies"));
+            http.get("/movies")
+                            .then((response)=>{
+                                this.movies = response.data;
+                                console.log(this.movies);
+                            }).catch((e)=>{
+                                console.log(e.response.data);
+                            })
+        }else{
+            this.movies = JSON.parse(sessionStorage.getItem("movies"));
+            
+        }
+        
         
     }
 
