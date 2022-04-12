@@ -52,6 +52,7 @@ export default {
                             }).catch((e)=>{
                                 console.log(e.response.data);
                             })
+          sessionStorage.setItem("movies",JSON.stringify(this.movies))
          }
          
        }

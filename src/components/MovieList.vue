@@ -58,7 +58,7 @@ export default {
        }
 
     },mounted(){
-        if(JSON.parse(sessionStorage.getItem("movies")).length <= 0){
+        // if(sessionStorage.getItem("movies").length < 1){
             console.log(sessionStorage.getItem("movies"));
             http.get("/movies")
                             .then((response)=>{
@@ -67,10 +67,10 @@ export default {
                             }).catch((e)=>{
                                 console.log(e.response.data);
                             })
-        }else{
-            this.movies = JSON.parse(sessionStorage.getItem("movies"));
+        // }else{
+        //     this.movies = JSON.parse(sessionStorage.getItem("movies"));
             
-        }
+        // }
         
         
     }
